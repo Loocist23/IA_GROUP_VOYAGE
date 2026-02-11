@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TimeTravel Agency — Webapp Interactive
 
-## Getting Started
+Projet supervisé IA (M1/M2) — Session 2 : **WEBAPP & IA AGENTS**
 
-First, run the development server:
+## 👥 Équipe
+- JADE COTTIN
+- ZEGNAL ANTHONY
+- ALEXANDRE SAUZE
+- DUPILLE FLORIAN
 
+## 🔗 Livrables (à renseigner)
+- URL de la webapp déployée : _à compléter_
+- Repository (GitHub ou export code) : _à compléter_
+
+## 🎯 Objectif
+Créer une webapp moderne et interactive pour **TimeTravel Agency** permettant de :
+- Découvrir 3 destinations temporelles (Paris 1889, Crétacé, Florence 1504)
+- Interagir avec un **agent conversationnel** (chatbot) qui conseille les visiteurs
+
+## ✨ Fonctionnalités
+- Landing page : header, hero (CTA), sections “Destinations”, “À propos”, footer
+- Galerie des destinations : 3 cards (durée + prix + CTA “Réserver maintenant”)
+- Animations UI : transitions / entrées au scroll (Framer Motion)
+- Chatbot IA : widget en bas à droite avec réponses via **Mistral AI** (et fallback si l’API n’est pas configurée)
+- Easter eggs :
+  - `/easteregg1` affiche les 2 images du dossier `public/`
+  - `/easteregg2` affiche les 2 images du dossier `public/`
+
+## 🧰 Stack technique
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS v4
+- Framer Motion (animations)
+- Lucide React (icônes)
+- Biome (lint/format)
+
+## 🤖 IA utilisées (transparence)
+- Chatbot : **Mistral AI API** (`mistral-small`) via `src/components/Chatbot.tsx`
+- Génération/itération du code (vibe coding) : _à compléter (outil + modèle utilisés)_
+- Visuels Session 1 : _à compléter (outil(s) de génération + crédits/licences)_
+
+## 🚀 Installation & lancement
+Prérequis : Node.js (et npm)
+
+1) Installer les dépendances :
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2) (Optionnel) Configurer Mistral pour le chatbot :
+Créer `.env.local` à la racine :
+```bash
+NEXT_PUBLIC_MISTRAL_API_KEY=...
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3) Lancer en dev :
+```bash
+npm run dev
+```
+Puis ouvrir `http://localhost:3000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Build & production
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## 📦 Déploiement
+Voir `DEPLOYMENT_INSTRUCTIONS.md`.
 
-To learn more about Next.js, take a look at the following resources:
+## 🗂️ Structure (résumé)
+```
+src/
+  app/                 # routes Next.js (App Router)
+  components/          # sections UI + chatbot
+  lib/                 # utilitaires
+public/                # assets statiques (images)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧾 Prompts / Process (à compléter)
+Pour le rendu “open source”, ajouter ici :
+- Les prompts utilisés (maquette, UI, chatbot, itérations)
+- Les choix effectués (MVP, arbitrages, limites)
+- Les crédits (APIs, modèles, assets)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Notes
+- Sans clé Mistral (`NEXT_PUBLIC_MISTRAL_API_KEY`), le chatbot utilise des réponses de secours (fallback).
+- Les images des destinations utilisent actuellement des liens Unsplash (placeholders) : remplaçables par les visuels Session 1.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 Licence
+Projet pédagogique — M1/M2 Digital & IA.
